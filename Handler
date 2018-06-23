@@ -1,0 +1,9 @@
+ new Handler().postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                session = new LoginSessionManager(getApplicationContext());
+                if (!session.checkLogin())
+                    startActivity(new Intent(getApplicationContext(), MainFragment.class));
+                finish();
+            }
+        }, 1000);
